@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cybratix</title>
+  <style>
+    body {
+      width: 350px;
+      padding: 20px;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 600;
+    }
+    .header p {
+      margin: 8px 0 0;
+      font-size: 13px;
+      opacity: 0.9;
+    }
+    .current-site {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      backdrop-filter: blur(10px);
+    }
+    .current-site-label {
+      font-size: 12px;
+      opacity: 0.8;
+      margin-bottom: 8px;
+    }
+    .current-site-url {
+      font-size: 14px;
+      font-weight: 500;
+      word-break: break-all;
+    }
+    .info-section {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 16px;
+      border-radius: 8px;
+      backdrop-filter: blur(10px);
+    }
+    .info-section h2 {
+      margin: 0 0 12px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .info-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .info-list li {
+      padding: 8px 0;
+      font-size: 13px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .info-list li:last-child {
+      border-bottom: none;
+    }
+    .factor-label {
+      font-weight: 500;
+      margin-right: 8px;
+    }
+    .factor-value {
+      font-weight: 600;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+    .factor-value.risk-low {
+      background: rgba(16, 185, 129, 0.2);
+      color: #d1fae5;
+    }
+    .factor-value.risk-medium {
+      background: rgba(245, 158, 11, 0.2);
+      color: #fef3c7;
+    }
+    .factor-value.risk-high {
+      background: rgba(239, 68, 68, 0.2);
+      color: #fee2e2;
+    }
+    .factor-value.risk-unknown {
+      background: rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.7);
+    }
+    .footer {
+      margin-top: 16px;
+      text-align: center;
+      font-size: 12px;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>🛡️ Cybratix</h1>
+    <p>Website Security Analysis</p>
+  </div>
+  
+  <div class="current-site">
+    <div class="current-site-label">Current Website:</div>
+    <div class="current-site-url" id="current-url">Loading...</div>
+  </div>
+  
+  <div class="info-section" id="risk-score-section" style="display: none; margin-bottom: 16px; border: 2px solid rgba(255, 255, 255, 0.3);">
+    <div style="text-align: center; margin-bottom: 16px;">
+      <div style="font-size: 12px; opacity: 0.8; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px;">Risk Score</div>
+      <div style="display: flex; align-items: baseline; justify-content: center; gap: 12px; flex-wrap: wrap;">
+        <div style="font-size: 56px; font-weight: 700; line-height: 1;" id="risk-score">-</div>
+        <div style="font-size: 16px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.9;" id="risk-level">-</div>
+      </div>
+      <div style="font-size: 11px; opacity: 0.7; margin-top: 8px;">Out of 100 (Higher is Safer)</div>
+    </div>
+    <div id="loading-score" style="text-align: center; padding: 20px; font-size: 13px; opacity: 0.8; display: none;">
+      ⏳ Analyzing website...
+    </div>
+    <ul class="info-list" id="risk-factors-list" style="display: none; margin-top: 12px;"></ul>
+  </div>
+  
+  <div class="info-section">
+    <h2>What We Check:</h2>
+    <ul class="info-list" id="risk-factors-list-full">
+      <li>✓ Domain Age (in days)</li>
+      <li>✓ Fraud Score (0-100)</li>
+      <li>✓ Phishing Detection</li>
+      <li>✓ Malware Detection</li>
+      <li>✓ Suspicious Activity</li>
+      <li>✓ Site Safety</li>
+    </ul>
+  </div>
+  
+  <div class="footer">
+    <div>The risk score badge appears automatically on each website you visit.</div>
+    <div style="margin-top: 8px; font-size: 10px; opacity: 0.7; padding: 8px; background: rgba(255,255,255,0.1); border-radius: 4px;">
+      <strong>Note:</strong> Risk scores are based on available data and should be used as one factor in your security assessment.
+    </div>
+    <div style="margin-top: 8px; font-size: 11px; opacity: 0.7;">
+      Developed by Prince Chukwuemeka<br>
+      <a href="mailto:pchukwuemeka424@gmail.com" style="color: white; text-decoration: underline;">pchukwuemeka424@gmail.com</a>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
+
