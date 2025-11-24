@@ -1,0 +1,13 @@
+node_modules/
+.DS_Store
+*.log
+*.zip
+*.crx
+*.pem
+config.js
+.env
+.env.local
+*.local
+dist/
+build/
+
